@@ -15,10 +15,10 @@ var admin = express();
 
 // this session store is only used if parent app
 // DOES NOT already have a session store.
-admin.use(session({ 
+admin.use(session({
     secret: 'Siracha!',
     saveUninitialized: true
-})); 
+}));
 
 admin.set('view engine', 'jade');
 admin.set('views', __dirname + '/lib/views');
@@ -34,14 +34,14 @@ admin.use(methodOverride(function(req, res) {
 }));
 
 admin.use('/static', express.static(__dirname + '/lib/static'));
-admin.use('/components', express.static(__dirname + '/components'));    
+admin.use('/components', express.static(__dirname + '/components'));
 
 
 module.exports = function(userDefined) {
     var userDefined = userDefined || {};
 
     var options = Options(userDefined);
-    
+
     var Models;
     var collectionNames;
     var collections;
@@ -56,7 +56,7 @@ module.exports = function(userDefined) {
     } else {
         Models = mongoose.models;
     };
-    
+
     // create map of plural collection names for easy lookup
     // e.g. {'users': 'User', ...}
     collectionNames = _.mapValues(_.mapKeys(Models, function(model) {
@@ -73,14 +73,14 @@ module.exports = function(userDefined) {
     admin.locals._mongooseModels = Models;
     admin.locals.collectionNames = collectionNames;
     admin.locals.collections = collections;
-    
+
     // get mount path for use in routing static
     admin.use(function(req, res, next) {
         var mountpath = admin.mountpath;
         admin.locals.appPath = mountpath;
         next();
     });
-    
+
     admin.use(function (req, res, next) {
         req.session.message = req.session.message || { error: [], success: [], info: [] };
         admin.locals.message  = req.session.message;
@@ -88,7 +88,7 @@ module.exports = function(userDefined) {
     });
 
     strategy = new Strategy(options);
-    
+
     admin.use(strategy.middleware.bind(strategy));
 
     admin.get('/', routes.main);
@@ -100,6 +100,6 @@ module.exports = function(userDefined) {
     admin.post('/:collection/suggest', routes.suggest);
     admin.all('/:collection/new', routes.newDoc);
     admin.all('/:collection/:doc', routes.doc);
-    
+
     return admin;
 };

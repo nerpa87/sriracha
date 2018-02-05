@@ -1,28 +1,31 @@
 {
-  "name": "sriracha-admin",
-  "version": "0.0.3",
-  "description": "An admin middleware for mongoose and express.",
-  "repository": {
+  "_from": "git+ssh://git@github.com/nerpa87/sriracha.git",
+  "_id": "sriracha-admin@0.0.3",
+  "_inBundle": false,
+  "_integrity": "sha1-r1AmfmnIEFKcEa52/JTmfCU/2WI=",
+  "_location": "/sriracha-admin",
+  "_phantomChildren": {},
+  "_requested": {
     "type": "git",
-    "url": "git://github.com/hdngr/sriracha.git"
+    "raw": "sriracha-admin@git+ssh://git@github.com/nerpa87/sriracha.git",
+    "name": "sriracha-admin",
+    "escapedName": "sriracha-admin",
+    "rawSpec": "git+ssh://git@github.com/nerpa87/sriracha.git",
+    "saveSpec": "git+ssh://git@github.com/nerpa87/sriracha.git",
+    "fetchSpec": "ssh://git@github.com/nerpa87/sriracha.git",
+    "gitCommittish": "master"
   },
-  "main": "index.js",
-  "files": [
-    "LICENSE",
-    "Readme.md",
-    "index.js",
-    "lib/",
-    "bower.json",
-    ".bowerrc"
+  "_requiredBy": [
+    "/"
   ],
-  "scripts": {
-    "start": "gulp simple",
-    "test": "gulp test",
-    "test-ci": "istanbul cover -x 'examples' _mocha -- tests/ -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "postinstall": "bower install"
-  },
+  "_resolved": "git+ssh://git@github.com/nerpa87/sriracha.git#cb6eff7372d5b9f87a5b24844e43322a4b6b34f3",
+  "_spec": "sriracha-admin@git+ssh://git@github.com/nerpa87/sriracha.git",
+  "_where": "/home/trp/projects/mainp/arctic-portal",
   "author": "",
-  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hdngr/sriracha/issues"
+  },
+  "bundleDependencies": false,
   "dependencies": {
     "body-parser": "^1.14.1",
     "bower": "^1.7.7",
@@ -33,6 +36,8 @@
     "method-override": "^2.3.5",
     "mongoose": ">=4"
   },
+  "deprecated": false,
+  "description": "An admin middleware for mongoose and express.",
   "devDependencies": {
     "async": "^1.4.2",
     "cheerio": "^0.19.0",
@@ -48,5 +53,28 @@
     "mocha-lcov-reporter": "^1.0.0",
     "should": "^7.1.0",
     "supertest": "^1.1.0"
-  }
+  },
+  "files": [
+    "LICENSE",
+    "Readme.md",
+    "index.js",
+    "lib/",
+    "bower.json",
+    ".bowerrc"
+  ],
+  "homepage": "https://github.com/hdngr/sriracha#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "name": "sriracha-admin",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hdngr/sriracha.git"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "start": "gulp simple",
+    "test": "gulp test",
+    "test-ci": "istanbul cover -x 'examples' _mocha -- tests/ -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "version": "0.0.3"
 }
