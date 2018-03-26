@@ -1,8 +1,10 @@
 .form-group(class=typeof errors[field] === "undefined" ? "" : "has-error")
-    .input-group
+  - var selector = Collection.modelName == 'Config' || Collection.modelName == 'Cache'  ? 'no_tinymce' : 'tinymce'
+    .input-group(class='#{selector}')
         h4
             .label.label-default(for=path) #{path}
-        textarea.form-control(id=path name=path, type='text', placeholder='', autofocus='',)
+             
+        textarea.form-control(id=path name=path, type='text', placeholder='', autofocus='', class='#{selector}')
             | #{doc.get(path)}
     if errors[path]
         span.help-block.text-danger= errors[path].message

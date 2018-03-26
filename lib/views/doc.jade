@@ -58,8 +58,10 @@ block append scripts
   script(type='text/javascript').
           // bootstrap textareas
           tinymce.init({
-              selector: "textarea",
+              selector: "textarea.tinymce",
               plugins : ["textcolor link image code"],
+              force_p_newlines : false,
+              forced_root_block : "",
               image_title: true, 
               // enable automatic uploads of images represented by blob or data URIs
               automatic_uploads: true,
@@ -109,4 +111,3 @@ block append scripts
     $(function () {
                 $('.datetimepicker').datetimepicker();
             });
-
