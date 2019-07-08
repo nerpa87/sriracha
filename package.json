@@ -33,8 +33,7 @@
     "express-session": "^1.12.1",
     "jade": "^1.11.0",
     "lodash": "^3.10.1",
-    "method-override": "^2.3.5",
-    "mongoose": ">=4"
+    "method-override": "^2.3.5"
   },
   "deprecated": false,
   "description": "An admin middleware for mongoose and express.",
