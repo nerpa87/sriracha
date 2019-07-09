@@ -33,8 +33,7 @@
     "express-session": "^1.12.1",
     "jade": "^1.11.0",
     "lodash": "^3.10.1",
-    "method-override": "^2.3.5",
-    "mongoose": "^4.13.18"
+    "method-override": "^2.3.5"
   },
   "deprecated": false,
   "description": "An admin middleware for mongoose and express.",
@@ -71,7 +70,6 @@
     "url": "git://github.com/hdngr/sriracha.git"
   },
   "scripts": {
-    "postinstall": "bower install",
     "start": "gulp simple",
     "test": "gulp test",
     "test-ci": "istanbul cover -x 'examples' _mocha -- tests/ -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
